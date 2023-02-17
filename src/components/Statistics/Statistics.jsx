@@ -1,6 +1,7 @@
 import { Notification } from 'components/Notification/Notification';
 
 import css from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({
   good,
@@ -10,19 +11,26 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <div className={css.statistics}>
-      <p className={css.title}>Statistics</p>
+    <>
       {total !== 0 ? 
         <>
-          <p>Good: {good}</p>
-          <p>Neutral: {neutral}</p>
-          <p>Bad: {bad}</p>
-          <p>Total: {total}</p>
-          <p>Positive feedback: {positivePercentage}%</p>
+          <p className={css.statistics}>Good: {good}</p>
+          <p className={css.statistics}>Neutral: {neutral}</p>
+          <p className={css.statistics}>Bad: {bad}</p>
+          <p className={css.statistics}>Total: {total}</p>
+          <p className={css.statistics}>Positive feedback: {positivePercentage}%</p>
         </>
        : 
         <Notification message={'No feedback given'} />
       }
-    </div>
+    </>
   );
 };
+
+Statistics.PropType = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired
+}

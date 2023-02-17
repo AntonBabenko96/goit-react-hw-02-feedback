@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({ leaveFeedback }) => {
   return (
-    <div className={css.box}>
-          <p className={css.title}>Please leave feedback</p>
+    <>
           <button
             className={css.btn}
             onClick={() => leaveFeedback('good')}
@@ -19,7 +19,10 @@ export const FeedbackOptions = ({ leaveFeedback }) => {
           <button className={css.btn} onClick={() => leaveFeedback('bad')}>
             Bad
           </button>
-        </div>
+        </>
 
   )
+}
+FeedbackOptions.PropType = {
+  LeaveFeedback: PropTypes.func.isRequired
 }

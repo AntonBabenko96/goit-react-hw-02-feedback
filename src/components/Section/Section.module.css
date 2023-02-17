@@ -1,4 +1,13 @@
-.section {
-    width: 1140px;
+.box {
+    width: 300px;
+    border: 1px solid black;
+    text-align: center;
+    margin-bottom: 20px;
     padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
 }
