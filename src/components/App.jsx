@@ -38,21 +38,18 @@ export class App extends Component {
   render() {
     return (
       <div className={css.section}>
-        <Section title='Please leave feedback'>
-           <FeedbackOptions
-          leaveFeedback={this.leaveFeedback}
+        <Section title="Please leave feedback">
+          <FeedbackOptions leaveFeedback={this.leaveFeedback} />
+        </Section>
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
           />
         </Section>
-        <Section title='Statistics'>
-          <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
-        </Section>
-        
       </div>
     );
   }

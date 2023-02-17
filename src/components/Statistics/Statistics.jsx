@@ -12,25 +12,27 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      {total !== 0 ? 
+      {total !== 0 ? (
         <>
           <p className={css.statistics}>Good: {good}</p>
           <p className={css.statistics}>Neutral: {neutral}</p>
           <p className={css.statistics}>Bad: {bad}</p>
           <p className={css.statistics}>Total: {total}</p>
-          <p className={css.statistics}>Positive feedback: {positivePercentage}%</p>
+          <p className={css.statistics}>
+            Positive feedback: {positivePercentage}%
+          </p>
         </>
-       : 
+      ) : (
         <Notification message={'No feedback given'} />
-      }
+      )}
     </>
   );
 };
 
-Statistics.PropType = {
+Statistics.propType = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.number.isRequired
-}
+  positivePercentage: PropTypes.number.isRequired,
+};
